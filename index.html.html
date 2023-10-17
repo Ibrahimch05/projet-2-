@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(0, 68, 255);
+        }
+
+        .form-container {
+            text-align: center;
+            background-color: rgb(250, 235, 215);
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+        }
+
+        .form-container label {
+            display: block;
+            text-align: left;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: rgb(0, 68, 255);
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container .show-password {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-container p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <label for="nom_utilisateur">Email :</label>
+        <input type="text" id="nom_utilisateur" name="nom_utilisateur" required>
+
+        <label for="mot_de_passe">Password :</label>
+        <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+
+        <div class="show-password">
+            <label for="showPassword">Show Password:</label>
+            <input type="checkbox" id="showPassword">
+        </div>
+
+        <input type="submit" value="Sign In">
+        <p>Forgot username / password?</p>
+        <p>Don't have an account? Sign up</p>
+    </div>
+
+    <script>
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordField = document.getElementById('mot_de_passe');
+
+        showPasswordCheckbox.addEventListener('change', function() {
+            if (showPasswordCheckbox.checked) {
+                passwordField.type = 'text'; // Afficher le mot de passe en texte brut
+            } else {
+                passwordField.type = 'password'; // Masquer le mot de passe
+            }
+        });
+    </script>
+</body>
+</html>
